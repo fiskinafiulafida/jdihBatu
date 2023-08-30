@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\KepalaPublikasiController;
+use App\Http\Controllers\KepPubkikasiBeritaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\JDIHController;
 use App\Http\Controllers\LoginController;
@@ -35,6 +37,12 @@ Route::group(['middleware' => ['auth', 'checkrole:operator,pengelolahbantuanhuku
 // operator
 Route::resource('/operator', OperatorController::class)->middleware('checkrole:operator');
 Route::resource('/berita', BeritaController::class)->middleware('checkrole:operator');
+
+// kepalapublikasi
+Route::group(['middleware' => ['auth', 'checkrole:kepalapublikasi']], function () {
+    Route::get('/kepalapublikasi', [KepalaPublikasiController::class, 'index']);
+});
+Route::resource('/kepalapublikasiberita', KepPubkikasiBeritaController::class)->middleware('checkrole:kepalapublikasi');
 
 // dahboard pemohon
 Route::resource('/pemohon', PemohonController::class)->middleware('checkrole:pemohon');
