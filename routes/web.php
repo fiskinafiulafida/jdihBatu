@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KepalaPublikasiController;
 use App\Http\Controllers\KepPubkikasiBeritaController;
@@ -47,6 +48,10 @@ Route::resource('/kepalapublikasiberita', KepPubkikasiBeritaController::class)->
 
 // Profile User
 Route::resource('/profile', ProfileController::class)->middleware('auth');
+
+// Password
+Route::resource('/password', PasswordController::class)->middleware('auth');
+Route::post('/change-password', [App\Http\Controllers\PasswordController::class, 'update'])->name('update-password')->middleware('auth');
 
 // dahboard pemohon
 Route::resource('/pemohon', PemohonController::class)->middleware('checkrole:pemohon');
