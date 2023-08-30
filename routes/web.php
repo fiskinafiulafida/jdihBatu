@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KepalaPublikasiController;
 use App\Http\Controllers\KepPubkikasiBeritaController;
 use App\Http\Controllers\BeritaController;
@@ -43,6 +44,9 @@ Route::group(['middleware' => ['auth', 'checkrole:kepalapublikasi']], function (
     Route::get('/kepalapublikasi', [KepalaPublikasiController::class, 'index']);
 });
 Route::resource('/kepalapublikasiberita', KepPubkikasiBeritaController::class)->middleware('checkrole:kepalapublikasi');
+
+// Profile User
+Route::resource('/profile', ProfileController::class)->middleware('auth');
 
 // dahboard pemohon
 Route::resource('/pemohon', PemohonController::class)->middleware('checkrole:pemohon');
