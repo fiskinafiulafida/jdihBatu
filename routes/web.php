@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\JDIHController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\PemohonController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +32,9 @@ Route::group(['middleware' => ['auth', 'checkrole:operator,pengelolahbantuanhuku
     Route::get('/logout', [LoginController::class, 'logout']);
     Route::get('/redirect', [LoginController::class, 'cek']);
 });
+// operator
+Route::resource('/operator', OperatorController::class)->middleware('checkrole:operator');
+Route::resource('/berita', BeritaController::class)->middleware('checkrole:operator');
 
 // dahboard pemohon
 Route::resource('/pemohon', PemohonController::class)->middleware('checkrole:pemohon');
