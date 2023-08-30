@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JDIHController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PemohonController;
 use App\Http\Controllers\RegisterController;
@@ -32,3 +33,7 @@ Route::group(['middleware' => ['auth', 'checkrole:operator,pengelolahbantuanhuku
 
 // dahboard pemohon
 Route::resource('/pemohon', PemohonController::class)->middleware('checkrole:pemohon');
+
+// Halaman yang tidak perlu Login dan Register
+// dashboard halaman awal sebelum login
+Route::resource('/dashboardjdih', JDIHController::class);
