@@ -7,6 +7,7 @@ use App\Http\Controllers\KepPubkikasiBeritaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\JDIHController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MasyaratakatController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\PemohonController;
 use App\Http\Controllers\RegisterController;
@@ -27,8 +28,7 @@ use App\Http\Controllers\LoginWithGoogleController;
 Route::resource('/register', RegisterController::class)->middleware('guest');
 
 Route::group(['middleware' => 'guest'], function () {
-    Route::get('/', [LoginController::class, 'index'])->name('index');
-    Route::get('/login', [LoginController::class, 'login'])->name('login');
+    Route::get('/', [LoginController::class, 'login'])->name('login');
     Route::post('/', [LoginController::class, 'dologin']);
 });
 
@@ -57,6 +57,8 @@ Route::post('/change-password', [App\Http\Controllers\PasswordController::class,
 
 // dahboard pemohon
 Route::resource('/pemohon', PemohonController::class)->middleware('checkrole:pemohon');
+// pemohohon
+Route::resource('/bantuanMasyarakat', MasyaratakatController::class)->middleware('checkrole:pemohon');
 
 // Halaman yang tidak perlu Login dan Register
 // dashboard halaman awal sebelum login
