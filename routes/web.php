@@ -11,6 +11,7 @@ use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\PemohonController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginWithGoogleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,8 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/register', RegisterController::class)->middleware('guest');
 
 Route::group(['middleware' => 'guest'], function () {
-    Route::get('/', [LoginController::class, 'login'])->name('login');
+    Route::get('/', [LoginController::class, 'index'])->name('index');
+    Route::get('/login', [LoginController::class, 'login'])->name('login');
     Route::post('/', [LoginController::class, 'dologin']);
 });
 
@@ -66,3 +68,5 @@ Route::get('/profiljdih', [App\Http\Controllers\JDIHController::class, 'profiljd
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('authorized/google', [LoginWithGoogleController::class, 'redirectToGoogle']);
+Route::get('authorized/google/callback', [LoginWithGoogleController::class, 'handleGoogleCallback']);
