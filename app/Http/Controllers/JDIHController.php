@@ -10,4 +10,14 @@ class JDIHController extends Controller
     {
         return view('dashboard.index');
     }
+
+    public function faq()
+    {
+        return view('pemohon.faq');
+    }
+
+    public function profiljdih()
+    {
+        return view('pemohon.profil');
+    }
 }

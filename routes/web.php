@@ -59,3 +59,10 @@ Route::resource('/pemohon', PemohonController::class)->middleware('checkrole:pem
 // Halaman yang tidak perlu Login dan Register
 // dashboard halaman awal sebelum login
 Route::resource('/dashboardjdih', JDIHController::class);
+
+Route::get('/faq', [App\Http\Controllers\JDIHController::class, 'faq'])->name('FAQ');
+Route::get('/profiljdih', [App\Http\Controllers\JDIHController::class, 'profiljdih'])->name('Profile');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
