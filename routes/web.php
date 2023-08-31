@@ -27,8 +27,9 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/register', RegisterController::class)->middleware('guest');
 
 Route::group(['middleware' => 'guest'], function () {
-    Route::get('/', [LoginController::class, 'login'])->name('login');
-    Route::post('/', [LoginController::class, 'dologin']);
+    Route::get('/', [LoginController::class, 'index'])->name('beranda');
+    Route::get('/login', [LoginController::class, 'login'])->name('login');
+    Route::post('/login', [LoginController::class, 'dologin']);
 });
 
 // guest yang akan melakukan logout

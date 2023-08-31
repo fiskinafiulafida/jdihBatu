@@ -13,6 +13,11 @@ class LoginController extends Controller
         return view('LogReg.Login');
     }
 
+    public function index()
+    {
+        return view('home');
+    }
+
     public function dologin(Request $request)
     {
         // validasi
