@@ -13,6 +13,7 @@ use App\Http\Controllers\PemohonController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginWithGoogleController;
+use App\Http\Controllers\SKPDController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +60,7 @@ Route::post('/change-password', [App\Http\Controllers\PasswordController::class,
 Route::resource('/pemohon', PemohonController::class)->middleware('checkrole:pemohon');
 // pemohohon
 Route::resource('/bantuanMasyarakat', MasyaratakatController::class)->middleware('checkrole:pemohon');
+Route::resource('/bantuanSKPD', SKPDController::class)->middleware('checkrole:pemohon');
 
 // Halaman yang tidak perlu Login dan Register
 // dashboard halaman awal sebelum login

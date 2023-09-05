@@ -1,8 +1,9 @@
 @extends('layout.app')
 
-@section('title', 'Bantuan Hukum Masyarakat')
+@section('title', 'Bantuan Hukum Desa/SKPD')
 
 @section('content')
+<!-- contact section -->
 <section class="contact_section layout_padding-bottom">
     <div class="container">
         <div class="heading_container">
@@ -15,15 +16,22 @@
                 <div class="form_container">
                     <form action="">
                         <div>
-                            <label class="font-weight">Nama SKPD (Untuk ASN)</label>
+                            <label class="font-weight">SKPD / Desa</label>
                             <div class="form-group">
                                 <input type="text" placeholder="Nama SKPD (Untuk ASN)" />
                             </div>
                         </div>
                         <div>
-                            <label class="font-weight">Langkah - Langkah yang Pernah dilakukan</label>
+                            <label class="font-weight">Jenis Perkara</label>
                             <div class="form-group">
-                                <input type="text" placeholder="Langkah - Langkah yang Pernah dilakukan" />
+                                <select name="" class="form-control wide" id="inputDoctorName">
+                                    <option value="Tanah ">Tanah </option>
+                                    <option value="Waris">Waris </option>
+                                    <option value="Utang Piutang ">Utang Piutang </option>
+                                    <option value="Jual Beli">Jual Beli</option>
+                                    <option value="Administrasi Pemerintahan">Administrasi Pemerintahan</option>
+                                    <option value="Yang Lain...">Yang Lain ... </option>
+                                </select>
                             </div>
                         </div>
                         <div>
@@ -33,19 +41,7 @@
                             </div>
                         </div>
                         <div>
-                            <label class="font-weight">Harapan dari User</label>
-                            <div class="form-group">
-                                <input type="text" placeholder="Harapan dari User" />
-                            </div>
-                        </div>
-                        <div>
-                            <label class="font-weight">Tanggapan / Jawaban atas Permasalahan</label>
-                            <div class="form-group">
-                                <input type="text" placeholder="Tanggapan / Jawaban atas Permasalahan" />
-                            </div>
-                        </div>
-                        <div>
-                            <label class="font-weight">KTP</label>
+                            <label class="font-weight">SKK</label>
                             <div class="form-group">
                                 <input type="file" class="form-control" name="gambar_berita">
                             </div>
