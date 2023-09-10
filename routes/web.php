@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KepalaPublikasiController;
 use App\Http\Controllers\KepPubkikasiBeritaController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\HasilKonsultasiController;
 use App\Http\Controllers\JDIHController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MasyaratakatController;
@@ -13,6 +14,8 @@ use App\Http\Controllers\PemohonController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginWithGoogleController;
+use App\Http\Controllers\ProfilePemohonController;
+use App\Http\Controllers\SuratPermohonanController;
 use App\Http\Controllers\SKPDController;
 
 /*
@@ -62,6 +65,8 @@ Route::resource('/pemohon', PemohonController::class)->middleware('checkrole:pem
 Route::resource('/bantuanMasyarakat', MasyaratakatController::class)->middleware('checkrole:pemohon');
 Route::resource('/bantuanSKPD', SKPDController::class)->middleware('checkrole:pemohon');
 
+// Profile Pemohon
+Route::resource('/profilePemohon', ProfilePemohonController::class)->middleware('checkrole:pemohon');
 // Halaman yang tidak perlu Login dan Register
 // dashboard halaman awal sebelum login
 Route::resource('/dashboardjdih', JDIHController::class);
@@ -74,3 +79,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('authorized/google', [LoginWithGoogleController::class, 'redirectToGoogle']);
 Route::get('authorized/google/callback', [LoginWithGoogleController::class, 'handleGoogleCallback']);
+
+// surat permohonan bantuan hukum
+Route::resource('/suratPermohonan', SuratPermohonanController::class)->middleware('checkrole:pemohon');
+Route::get('hasilMediasi', [App\Http\Controllers\SuratPermohonanController::class, 'viewMediasi'])->middleware('checkrole:pemohon');
+Route::resource('/konsultasi', HasilKonsultasiController::class)->middleware('checkrole:pemohon');
