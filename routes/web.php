@@ -63,6 +63,7 @@ Route::post('/change-password', [App\Http\Controllers\PasswordController::class,
 Route::resource('/pemohon', PemohonController::class)->middleware('checkrole:pemohon');
 // pemohohon
 Route::resource('/bantuanMasyarakat', MasyaratakatController::class)->middleware('checkrole:pemohon');
+Route::get('/bantuanBerhasil', [MasyaratakatController::class, 'berhasil'])->middleware('checkrole:pemohon');
 Route::resource('/bantuanSKPD', SKPDController::class)->middleware('checkrole:pemohon');
 
 // Profile Pemohon
