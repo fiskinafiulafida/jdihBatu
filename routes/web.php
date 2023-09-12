@@ -73,6 +73,8 @@ Route::resource('/dashboardjdih', JDIHController::class);
 
 Route::get('/faq', [App\Http\Controllers\JDIHController::class, 'faq'])->name('FAQ');
 Route::get('/profiljdih', [App\Http\Controllers\JDIHController::class, 'profiljdih'])->name('Profile');
+Route::get('/beritajdih', [App\Http\Controllers\JDIHController::class, 'beritajdih'])->name('Berita');
+Route::get('/detailberita/{id}', [JDIHController::class, 'show'])->name('detailberita.show');
 
 Auth::routes();
 
