@@ -18,6 +18,8 @@ use App\Http\Controllers\ProfilePemohonController;
 use App\Http\Controllers\SuratPermohonanController;
 use App\Http\Controllers\SKPDController;
 
+
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

@@ -11,21 +11,22 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                        <p>
-                            JDIH Kota Batu merupakan suatu sistem pendayagunaan bersama peraturan perundang-undangan
-                            untuk meningkatkan pelayanan kepada masyarakat atas kebutuhan dokumentasi dan informasi hukum
-                            secara lengkap, akurat, mudah dan cepat.
-                        </p>
-                        <a href="/profiljdih" style="text-decoration: none">
-                            Profil
-                        </a>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
                     </div>
+                    @endif
+                    <p>
+                        JDIH Kota Batu merupakan suatu sistem pendayagunaan bersama peraturan perundang-undangan
+                        untuk meningkatkan pelayanan kepada masyarakat atas kebutuhan dokumentasi dan informasi hukum
+                        secara lengkap, akurat, mudah dan cepat.
+                    </p>
+                    <a href="/profiljdih" style="text-decoration: none">
+                        Profil
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection

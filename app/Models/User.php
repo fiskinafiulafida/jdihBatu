@@ -17,7 +17,7 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $fillable = [
-        'name', 'email', 'password', 'google_id',
+        'name', 'email', 'password', 'google_id', 'jenisKelamin', 'nik', 'noHp', 'alamat', 'usia', 'pekerjaan', 'pendidikanTerakhir', 'role'
     ];
 
     protected $hidden = [
@@ -31,4 +31,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
+    public function bantuanhukum()
+    {
+        return $this->hasMany(BantuanHukum::class, 'users_id', 'id');
+    }
 }
