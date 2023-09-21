@@ -23,44 +23,32 @@ class ProfileController extends Controller
 
         return view('profile.edit', compact('profile', 'berita'));
     }
+
     public function update(Request $request, Register $profile)
     {
         $this->validate($request, [
-            'name'                      => 'required',
-            'email'                     => 'required',
+            'name' => '',
+            'email' => '',
+            'jenisKelamin' => '',
+            'nik' => '',
+            'usia' => '',
+            'pekerjaan' => '',
+            'pendidikanTerakhir' => '',
+            'noHp' => '',
+            'alamat' => ''
         ]);
 
-        //get data User by ID
-        $profile = Register::findOrFail($profile->id);
+        $profile->name = $request->input('name');
+        $profile->email = $request->input('email');
+        $profile->jenisKelamin = $request->input('jenisKelamin');
+        $profile->nik = $request->input('nik');
+        $profile->usia = $request->input('usia');
+        $profile->pekerjaan = $request->input('pekerjaan');
+        $profile->pendidikanTerakhir = $request->input('pendidikanTerakhir');
+        $profile->noHp = $request->input('noHp');
+        $profile->alamat = $request->input('alamat');
+        $profile->save();
 
-        if ($request->file('profile') == "") {
-
-            $profile->update([
-                'name'                  => $request->name,
-                'email'                 => $request->email,
-            ]);
-        } else {
-
-            //hapus old image
-            Storage::disk('local')->delete('public/image/' . $profile->profile);
-
-            //upload new image
-            $profile = $request->file('profile');
-            $profile->storeAs('public/image', $profile->hashName());
-
-            $profile->update([
-                'profile'           => $profile->hashName(),
-                'name'              => $request->name,
-                'email'             => $request->email,
-            ]);
-        }
-
-        if ($profile) {
-            //redirect dengan pesan sukses
-            return redirect()->route('profile.index')->with(['success' => 'Data Berhasil Diupdate!']);
-        } else {
-            //redirect dengan pesan error
-            return redirect()->route('profile.index')->with(['error' => 'Data Gagal Diupdate!']);
-        }
+        return redirect('/profile')->with('success', 'Profile Updated');
     }
 }
