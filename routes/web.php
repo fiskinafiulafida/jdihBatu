@@ -14,6 +14,7 @@ use App\Http\Controllers\PemohonController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginWithGoogleController;
+use App\Http\Controllers\PassPemohonController;
 use App\Http\Controllers\ProfilePemohonController;
 use App\Http\Controllers\SuratPermohonanController;
 use App\Http\Controllers\SKPDController;
@@ -60,6 +61,10 @@ Route::resource('/profile', ProfileController::class)->middleware('auth');
 // Password
 Route::resource('/password', PasswordController::class)->middleware('auth');
 Route::post('/change-password', [App\Http\Controllers\PasswordController::class, 'update'])->name('update-password')->middleware('auth');
+
+// Password untuk pemohon
+Route::resource('/passwordPemohon', PassPemohonController::class)->middleware('auth');
+Route::post('/change-password', [App\Http\Controllers\PassPemohonController::class, 'update'])->name('update-password')->middleware('auth');
 
 // dahboard pemohon
 Route::resource('/pemohon', PemohonController::class)->middleware('checkrole:pemohon');

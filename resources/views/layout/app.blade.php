@@ -188,7 +188,7 @@
                                             <i class="bi bi-person-fill"></i>
                                             Profile
                                         </a>
-                                        <a class="dropdown-item" href="{{ route('password.edit', Auth::user()->id) }}">
+                                        <a class="dropdown-item" href="{{ route('passwordPemohon.edit', Auth::user()->id) }}">
                                             <i class="bi bi-key-fill"></i>
                                             Change Password
                                         </a>
