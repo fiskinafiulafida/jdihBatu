@@ -18,8 +18,7 @@ use App\Http\Controllers\PassPemohonController;
 use App\Http\Controllers\ProfilePemohonController;
 use App\Http\Controllers\SuratPermohonanController;
 use App\Http\Controllers\SKPDController;
-
-
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +47,7 @@ Route::group(['middleware' => ['auth', 'checkrole:operator,pengelolahbantuanhuku
 // operator
 Route::resource('/operator', OperatorController::class)->middleware('checkrole:operator');
 Route::resource('/berita', BeritaController::class)->middleware('checkrole:operator');
+Route::resource('/user', UserController::class)->middleware('checkrole:operator');
 
 // kepalapublikasi
 Route::group(['middleware' => ['auth', 'checkrole:kepalapublikasi']], function () {
