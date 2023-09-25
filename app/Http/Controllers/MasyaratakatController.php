@@ -45,7 +45,7 @@ class MasyaratakatController extends Controller
 
         if ($berita) {
             //redirect dengan pesan sukses
-            return redirect()->route('bantuanBerhasil')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('pemohon.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
             //redirect dengan pesan error
             return redirect()->route('bantuanMasyarakat.index')->with(['error' => 'Data Gagal Disimpan!']);
