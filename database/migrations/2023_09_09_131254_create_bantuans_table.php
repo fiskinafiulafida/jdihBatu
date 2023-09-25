@@ -58,8 +58,11 @@ class CreateBantuansTable extends Migration
             $table->string('pihak1_perkara');
             $table->text('hasil_mediasi');
             $table->text('ttd_pihak1');
+            $table->String('namattd_pihak1');
             $table->text('ttd_pihak2');
+            $table->String('namattd_pihak2');
             $table->text('ttd_mediator');
+            $table->String('namattd_mediator');
             $table->timestamps();
         });
     }

@@ -17,6 +17,13 @@
         <i class="fas fa-fw fa-newspaper"></i>
         <span>Berita</span></a>
 </li>
+
+<!-- Nav Item - User -->
+<li class="nav-item">
+    <a class="nav-link" href="/user">
+        <i class="fas fa-fw fa-user"></i>
+        <span>User</span></a>
+</li>
 @endsection
 
 @section('container')

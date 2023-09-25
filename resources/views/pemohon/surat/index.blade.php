@@ -483,6 +483,18 @@
                                 @enderror
                             </div>
                             <div>
+                                <label class="font-weight">Nama Tanda Tangan Pihak 1 : </label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control @error('namattd_pihak1') is-invalid @enderror" name="namattd_pihak1" value="{{ old('namattd_pihak1') }}" placeholder="Nama TTD pihak 1" />
+                                </div>
+                                <!-- error message untuk status_pemohon -->
+                                @error('namattd_pihak1')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                            <div>
                                 <label class="font-weight">Tanda Tangan Pihak 2</label>
                                 <input type="file" class="form-control @error('ttd_pihak2') is-invalid @enderror" name="ttd_pihak2">
                                 <!-- error message untuk ttd_pemohon -->
@@ -493,10 +505,34 @@
                                 @enderror
                             </div>
                             <div>
+                                <label class="font-weight">Nama Tanda Tangan Pihak 2 : </label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control @error('namattd_pihak2') is-invalid @enderror" name="namattd_pihak2" value="{{ old('namattd_pihak2') }}" placeholder="Nama TTD pihak 2" />
+                                </div>
+                                <!-- error message untuk status_pemohon -->
+                                @error('namattd_pihak2')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                            <div>
                                 <label class="font-weight">Tanda Tangan Mediator</label>
                                 <input type="file" class="form-control @error('ttd_mediator') is-invalid @enderror" name="ttd_mediator">
                                 <!-- error message untuk ttd_pemohon -->
                                 @error('ttd_mediator')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+                            <div>
+                                <label class="font-weight">Nama Tanda Tangan Mediator : </label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control @error('namattd_mediator') is-invalid @enderror" name="namattd_mediator" value="{{ old('namattd_mediator') }}" placeholder="Nama Mediator" />
+                                </div>
+                                <!-- error message untuk status_pemohon -->
+                                @error('namattd_mediator')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}
                                 </div>

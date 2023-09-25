@@ -15,7 +15,7 @@ class CreateBantuanhukumTable extends Migration
     {
         Schema::create('bantuanhukum', function (Blueprint $table) {
             $table->id();
-            $table->String('skpd/desa')->nullable();
+            $table->String('skpd')->nullable();
             $table->text('langkahlangkah')->nullable();
             $table->text('uraian')->nullable();
             $table->text('harapan')->nullable();
