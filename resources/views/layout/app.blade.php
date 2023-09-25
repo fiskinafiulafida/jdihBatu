@@ -133,15 +133,15 @@
                                     <a class="nav-link" href="/profiljdih"> Profile</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/dashboardjdih">Berita</a>
+                                    <a class="nav-link" href="/beritajdih">Berita</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Pelayanan
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Pengajuan PROKUM</a></li>
-                                        <li><a class="dropdown-item" href="#">Pengajuan PERDES</a></li>
+                                        <li><a class="dropdown-item" href="/bantuanMasyarakat">Pengajuan PROKUM</a></li>
+                                        <li><a class="dropdown-item" href="/suratPermohonan">Pengajuan PERDES</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -149,8 +149,8 @@
                                         Bantuan Hukum
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">SIBAHUKAMIL</a></li>
-                                        <li><a class="dropdown-item" href="#">Konsultasi Online</a></li>
+                                        <li><a class="dropdown-item" href="/sibahukamil">SIBAHUKAMIL</a></li>
+                                        <li><a class="dropdown-item" href="/konsultasi">Konsultasi Online</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">

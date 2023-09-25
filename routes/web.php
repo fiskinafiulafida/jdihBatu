@@ -82,6 +82,7 @@ Route::resource('/dashboardjdih', JDIHController::class);
 Route::get('/faq', [App\Http\Controllers\JDIHController::class, 'faq'])->name('FAQ');
 Route::get('/profiljdih', [App\Http\Controllers\JDIHController::class, 'profiljdih'])->name('Profile');
 Route::get('/beritajdih', [App\Http\Controllers\JDIHController::class, 'beritajdih'])->name('Berita');
+Route::get('/sibahukamil', [App\Http\Controllers\JDIHController::class, 'sibahukamil'])->name('SIBAHUKAMIL');
 Route::get('/detailberita/{id}', [JDIHController::class, 'show'])->name('detailberita.show');
 
 Auth::routes();
@@ -92,5 +93,7 @@ Route::get('authorized/google/callback', [LoginWithGoogleController::class, 'han
 
 // surat permohonan bantuan hukum
 Route::resource('/suratPermohonan', SuratPermohonanController::class)->middleware('checkrole:pemohon');
+Route::get('/surat', [SuratPermohonanController::class, 'print']);
+Route::get('/cetak_surat/{id}', [SuratPermohonanController::class, 'cetak']);
 Route::get('hasilMediasi', [App\Http\Controllers\SuratPermohonanController::class, 'viewMediasi'])->middleware('checkrole:pemohon');
 Route::resource('/konsultasi', HasilKonsultasiController::class)->middleware('checkrole:pemohon');

@@ -22,6 +22,11 @@ class JDIHController extends Controller
         return view('pemohon.profil');
     }
 
+    public function sibahukamil()
+    {
+        return view('pemohon.sibahukamil');
+    }
+
     // Berita jdih
     public function beritajdih()
     {

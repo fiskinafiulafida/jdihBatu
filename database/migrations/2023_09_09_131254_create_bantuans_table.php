@@ -41,14 +41,17 @@ class CreateBantuansTable extends Migration
             $table->text('nasihat');
             $table->text('hasilkonsultasi');
             $table->text('kesanKonsultasi');
+            $table->text('nama_konsultanhukum');
             $table->text('ttd_konsultanhukum');
             $table->string('tempat_bantuanhukum');
             $table->string('tanggal_bantuanhukum');
             $table->text('ttd_pemberibantuanhukum');
             // laporan pelaksanaan Kegiatan mediasi
             $table->string('hari_mediasi');
-            $table->date('tanggal_mediasi');
-            $table->date('dilaksanakan_mediasi');
+            $table->string('tanggal_mediasi');
+            $table->string('bulan_mediasi');
+            $table->string('tahun_mediasi');
+            $table->string('dilaksanakan_mediasi');
             $table->string('alamat_mediasi');
             $table->string('pihak1_mediasi');
             $table->string('pihak1_alamat');
